@@ -1,0 +1,79 @@
+/* colors:
+gradient fialova: #615dad;
+gradient ruuzova: #ffc8da;
+barva textu: #ffffff;
+podklad tmave modry: #283e50;
+tlacitko Pravidla: #1fcca4;
+tlacitko Pravidla po najeti: #1cbb96;
+tlacitko hrat:#0197f6;
+tlacitko hrat po najeti: #0090e9; */
+
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: 'Open Sans', sans-serif;
+  /* border-radius: 10px; */
+  background-image: linear-gradient(#615dad, #ffc8da);
+}
+
+main {
+  width: 360px;
+  background-color: #283e50;
+  margin: 30px auto;
+  text-align: center;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+h1 {
+  font-family: 'Lobster';
+  color: #ffffff;
+  margin: 30px;
+}
+
+img {
+  width: 360px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.description {
+  margin: 30px 10px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.button-rules {
+  background-color: #1fcca4;
+  display: block;
+  text-decoration: none;
+  padding: 10px 0 10px 0;
+  color: white;
+}
+
+.button-rules:hover {
+  background-color: #1cbb96;
+}
+
+.button-play {
+  background-color: #0197f6;
+  display: block;
+  text-decoration: none;
+  padding: 10px 0 10px 0;
+  color: white;
+  border-top: solid 1px #283e50;
+}
+
+.button-play:hover {
+  background-color: #0090e9;
+}
