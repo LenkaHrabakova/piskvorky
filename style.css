@@ -38,11 +38,12 @@ main {
 h1 {
   font-family: 'Lobster';
   color: #ffffff;
-  margin: 30px;
+  padding: 30px;
+  margin: 0;
 }
 
 img {
-  width: 360px;
+  max-width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -76,4 +77,39 @@ img {
 
 .button-play:hover {
   background-color: #0090e9;
+}
+
+ol {
+  margin: 30px 45px;
+  padding: 0 25px 0 25px;
+}
+
+li {
+  padding: 0 0 15px 0;
+  text-align: left;
+}
+
+span {
+  position: relative;
+  left: 15px;
+}
+
+figure {
+  padding: 20px;
+  margin: 0;
+}
+
+.pictures img {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.pictures figcaption {
+  padding: 10px 0 0 0;
+  font-style: italic;
 }
