@@ -51,6 +51,12 @@ img {
   font-size: 16px;
 }
 
+.types {
+  filter: invert(100%);
+  width: 1em;
+  height: 1em;
+}
+
 /* buttons styles */
 
 .button-rules {
