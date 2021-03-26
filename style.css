@@ -26,9 +26,9 @@ body {
 }
 
 main {
-  width: 360px;
+  /* max-width: 360px; */
   background-color: #283e50;
-  margin: 30px auto;
+  margin: 30px 10px 10px 10px;
   text-align: center;
   color: white;
   border-top-left-radius: 10px;
@@ -80,7 +80,7 @@ img {
 }
 
 ol {
-  margin: 30px 45px;
+  margin: 30px;
   padding: 0 25px 0 25px;
 }
 
@@ -109,7 +109,37 @@ figure {
   max-width: 100%;
 }
 
+.pictures {
+  display: flex;
+  flex-direction: column;
+}
+
 .pictures figcaption {
   padding: 10px 0 0 0;
   font-style: italic;
+}
+
+/* tablets */
+@media (min-width: 540px) {
+  main {
+    margin: 30px 30px 10px 30px;
+  }
+  .pictures {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  figure {
+    flex-wrap: wrap;
+    width: calc(100% / 2);
+    padding: 20px;
+  }
+}
+
+/* desktops */
+@media (min-width: 960px) {
+  main {
+    max-width: 960px;
+    margin: 30px auto;
+  }
 }
