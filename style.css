@@ -132,6 +132,7 @@ a {
 .play button:focus,
 .play button:hover {
   background-color: rgb(247, 185, 226);
+  opacity: 50%;
 }
 
 /* list styles */
