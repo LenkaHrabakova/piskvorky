@@ -77,7 +77,7 @@ a {
 .button-play {
   background-color: #0197f6;
   display: block;
-  /* padding: 10px 0 10px 0; */
+  padding: 10px 0 10px 0;
   color: white;
   border-top: solid 1px #283e50;
 }
