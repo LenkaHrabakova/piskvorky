@@ -155,14 +155,14 @@ a {
 /* css styles for hra.html js classes */
 .play .board__field--circle {
   color: black;
-  background-image: url('/pictures/circle.svg');
+  background-image: url('pictures/circle.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 75%;
 }
 .play .board__field--cross {
   color: black;
-  background-image: url('/pictures/cross.svg');
+  background-image: url('pictures/cross.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 75%;
