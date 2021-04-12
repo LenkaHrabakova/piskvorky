@@ -138,17 +138,34 @@ a {
 
 .play button {
   margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
-  opacity: 30%;
-  background-color: rgb(247, 185, 226);
+  background-color: #cfbedc;
   border: none;
   cursor: pointer;
+  background-size: 0;
+  transition: ease-in 0.15s background-size;
 }
 .play button:focus,
 .play button:hover {
-  background-color: rgb(252, 172, 225);
+  background-color: #b0a8d2;
   opacity: 50%;
+}
+/* css styles for hra.html js classes */
+.play .board__field--circle {
+  color: black;
+  background-image: url('/pictures/circle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
+.play .board__field--cross {
+  color: black;
+  background-image: url('/pictures/cross.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
 }
 
 /* list styles */
