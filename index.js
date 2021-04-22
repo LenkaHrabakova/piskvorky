@@ -65,6 +65,10 @@ const getSymbol = (field) => {
   }
 };
 
+const isInBoard = (i) => {
+  return i >= 0 && i < 10;
+};
+
 const symbolsToWin = 5;
 const isWinningMove = (field) => {
   const origin = getPosition(field);
@@ -115,55 +119,81 @@ const isWinningMove = (field) => {
   if (inColumn >= symbolsToWin) {
     return true;
   }
+  //bonus
+  //pro lepsi orientaci - x je radek, y je sloupec jako u souradnic
+  //! moje funkce getField bere nejdriv row a pak column, proto jsou tam souradnice prohozene
 
+  //nahoru doprava + doleva dolu
   let inDiagonalA = 1;
 
-  // kouka doprava dolu
-  i = origin.row;
-  let x = origin.column;
+  //koukam nahoru doprava
+  let x = 0; //radky
+  let y = 0; //sloupce
+
+  x = origin.column;
+  y = origin.row;
 
   while (
-    i > boardSize - 1 &&
-    x > -1 &&
-    symbol === getSymbol(getField(i + 1, x + 1))
+    isInBoard(x + 1) &&
+    isInBoard(y - 1) &&
+    getSymbol(getField(y - 1, x + 1))
   ) {
     inDiagonalA++;
-    i++;
     x++;
+    y--;
   }
 
-  //kouka doleva nahoru
-  i = origin.row; //i je row
-  x = origin.column; //x column
+  //koukam doleva dolu
 
-  while (i > 0 && x > 0 && symbol === getSymbol(getField(i - 1, x - 1))) {
+  x = origin.column;
+  y = origin.row;
+
+  while (
+    isInBoard(x - 1) &&
+    isInBoard(y + 1) &&
+    getSymbol(getField(y + 1, x - 1))
+  ) {
     inDiagonalA++;
     x--;
-    i--;
+    y++;
   }
+
   if (inDiagonalA >= symbolsToWin) {
     return true;
   }
 
+  //nahoru doleva + doprava dolu
+
   let inDiagonalB = 1;
-  //kouka doprava nahoru
-  i = origin.row;
+
+  //koukam nahoru doleva
+
   x = origin.column;
+  y = origin.row;
 
-  while (i > 0 && x > 0 && getSymbol(getField(i - 1, x + 1))) {
-    inDiagonalB++;
-    x++;
-    i--;
-  }
-
-  //kouka doleva dolu
-  i = origin.row;
-  x = origin.column;
-
-  while (i > boardSize - 1 && x > -1 && getSymbol(getField(i + 1, x - 1))) {
+  while (
+    isInBoard(x - 1) &&
+    isInBoard(y - 1) &&
+    getSymbol(getField(y - 1, x - 1))
+  ) {
     inDiagonalB++;
     x--;
-    i++;
+    y--;
+  }
+
+  //koukam doprava dolu
+
+  x = origin.column;
+  y = origin.row;
+
+  while (
+    isInBoard(x + 1) &&
+    isInBoard(y + 1) &&
+    getSymbol(getField(y + 1, x + 1))
+  ) {
+    inDiagonalB++;
+    x++;
+    y++;
   }
 
   if (inDiagonalB >= symbolsToWin) {
